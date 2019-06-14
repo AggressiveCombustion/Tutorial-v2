@@ -46,8 +46,6 @@ public class PlayerController : PhysicsObject
 
     public GameObject blood;
     public GameObject bloodParticle;
-    public GameObject soundBlast;
-    public GameObject explosive;
 
     public LineRenderer gunLine;
 
@@ -385,9 +383,7 @@ public class PlayerController : PhysicsObject
     }
 
     void ShootGun()
-    {
-        //instantiate effect
-        Instantiate(soundBlast, transform.position + new Vector3(0.5f * facing, 0), Quaternion.Euler(0, 0, 0));
+    { 
         // alert others
         foreach (Enemy e in FindObjectsOfType<Enemy>())
         {
@@ -448,6 +444,13 @@ public class PlayerController : PhysicsObject
                 
                 Instantiate(bloodParticle, kickHit.transform.position, Quaternion.Euler(0, 0, 0));
                 kickHit.transform.GetComponent<Enemy>().GetHit(Vector2.right * facing, 6);
+
+                CameraManager.instance.CamZoom();
+                CameraManager.instance.SetDutch();
+                CameraManager.instance.SetFollowTarget(kickHit.transform);
+
+                Timer t = new Timer(1.5f, CameraManager.instance.ReturnToNormal);
+                GameManager.instance.AddTimer(t, gameObject);
             }
         }
     }

@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 4294627020261310938}
   - component: {fileID: 4294627020261310939}
   - component: {fileID: 4294627020261310941}
+  - component: {fileID: 5721447548810537420}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -269,6 +270,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5965fd3063b548e4d91348a911d3fe20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5721447548810537420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294627020261310937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d47e7eb6d10c59439cea2eb6903322a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 4294627020485002622}
 --- !u!1 &4294627020485002620
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,10 +400,6 @@ MonoBehaviour:
   fallTime: 0
   blood: {fileID: 3217026575504796734, guid: 775f9754feaac43408f74559a0cb5712, type: 3}
   bloodParticle: {fileID: 3581375967504724101, guid: 7ca24aeeb6b8fac419493fc1614f8772,
-    type: 3}
-  soundBlast: {fileID: 7661506371795916263, guid: a41bbb74936e6d743b55fed4dca59406,
-    type: 3}
-  explosive: {fileID: 4401579205848167113, guid: 0cf211a206ed7934b8c72700f63e13ea,
     type: 3}
   gunLine: {fileID: 4294627018631790721}
   invulnerable: 0

@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    /*public static CameraManager instance;
+    public static CameraManager instance;
 
     public Transform cEstablishing;
     public Transform cPlayer;
     public Transform cZoom;
 
-    public CinemachineVirtualCamera current;
+    //public CinemachineVirtualCamera current;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class CameraManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Timer t = new Timer(0.5f, CamFollowPlayer);
+        Timer t = new Timer(1, CamFollowPlayer);
         GameManager.instance.AddTimer(t, gameObject);
     }
 
@@ -39,7 +39,7 @@ public class CameraManager : MonoBehaviour
         cPlayer.gameObject.SetActive(false);
         cZoom.gameObject.SetActive(false);
 
-        current = cEstablishing.GetComponent<CinemachineVirtualCamera>();
+        //current = cEstablishing.GetComponent<CinemachineVirtualCamera>();
     }
 
     public void CamFollowPlayer()
@@ -48,7 +48,7 @@ public class CameraManager : MonoBehaviour
         cPlayer.gameObject.SetActive(true);
         cZoom.gameObject.SetActive(false);
 
-        current = cPlayer.GetComponent<CinemachineVirtualCamera>();
+        //current = cPlayer.GetComponent<CinemachineVirtualCamera>();
         SetFollowTarget(FindObjectOfType<PlayerController>().transform);
     }
 
@@ -58,18 +58,18 @@ public class CameraManager : MonoBehaviour
         cPlayer.gameObject.SetActive(false);
         cZoom.gameObject.SetActive(true);
 
-        current = cZoom.GetComponent<CinemachineVirtualCamera>();
+        //current = cZoom.GetComponent<CinemachineVirtualCamera>();
     }
 
     public void SetFollowTarget(Transform target)
     {
-        current.Follow = target;
+        //current.Follow = target;
     }
 
     public void ReturnToNormal()
     {
         CamFollowPlayer();
-        current.Follow = FindObjectOfType<PlayerController>().transform;
+        //current.Follow = FindObjectOfType<PlayerController>().transform;
     }
 
     public void SetDutch()
@@ -81,6 +81,6 @@ public class CameraManager : MonoBehaviour
             mult = Random.Range(-1, 2);
 
         Debug.Log(mult * angle + "");
-        current.m_Lens.Dutch = angle * mult ;
-    }*/
+        //current.m_Lens.Dutch = angle * mult ;
+    }
 }

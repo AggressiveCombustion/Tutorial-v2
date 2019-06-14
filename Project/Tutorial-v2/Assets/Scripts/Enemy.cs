@@ -31,7 +31,6 @@ public class Enemy : PhysicsObject
 
     public Animator anim;
     public GameObject blood;
-    public GameObject soundBlast;
 
     public bool patrol = false;
     public Transform[] patrolNodes;
@@ -187,7 +186,7 @@ public class Enemy : PhysicsObject
         Instantiate(blood, transform.position + new Vector3(0, -0.75f, -0.1f), Quaternion.Euler(Random.Range(0, 360),
                                                                 Random.Range(0, 360),
                                                                 Random.Range(0, 360)));
-        Instantiate(soundBlast, transform.position, Quaternion.Euler(0, 0, 0));
+        //Instantiate(soundBlast, transform.position, Quaternion.Euler(0, 0, 0));
         // play death sound
         // shake screen
         state = EnemyState.dead;
@@ -446,9 +445,10 @@ public class Enemy : PhysicsObject
             {
                 fallTime = 0;
 
-                /*int r = Random.Range(0, 4);
-                SfxManager.instance.PlaySFX(SfxManager.instance.screams[r], true);*/
-                Debug.Log("AAAAA");
+                CameraManager.instance.CamEstablishingShot();
+                Timer t = new Timer(3, CameraManager.instance.ReturnToNormal);
+                GameManager.instance.AddTimer(t, gameObject);
+                
                 deathFall = true;
                 anim.SetBool("fall", true);
                 
@@ -503,8 +503,6 @@ public class Enemy : PhysicsObject
 
     void ShootGun()
     {
-        //instantiate effect
-        Instantiate(soundBlast, transform.position + new Vector3(0.5f * facing, 0), Quaternion.Euler(0, 0, 0));
         // alert others
         foreach (Enemy e in FindObjectsOfType<Enemy>())
         {

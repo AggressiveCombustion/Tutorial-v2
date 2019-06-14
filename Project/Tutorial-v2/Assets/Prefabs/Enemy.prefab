@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5606077213626304980}
   - component: {fileID: 5606077213626304983}
   - component: {fileID: 5606077213626304981}
+  - component: {fileID: 7369313734034966560}
   m_Layer: 0
   m_Name: EnemySprite
   m_TagString: Untagged
@@ -113,6 +114,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5965fd3063b548e4d91348a911d3fe20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7369313734034966560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5606077213626304969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d47e7eb6d10c59439cea2eb6903322a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5606077213997926979}
 --- !u!1 &5606077213997926982
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,8 +255,6 @@ MonoBehaviour:
   maxSpeed: 1
   anim: {fileID: 5606077213626304983}
   blood: {fileID: 3217026575504796734, guid: 775f9754feaac43408f74559a0cb5712, type: 3}
-  soundBlast: {fileID: 7661506371795916263, guid: a41bbb74936e6d743b55fed4dca59406,
-    type: 3}
   patrol: 1
   patrolNodes:
   - {fileID: 0}
